@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Initial Content Box */
+#init-ctt-box {
+    padding: 4rem;
+}
+
+/* Title */
+#title- {
+    font-weight: 400px;
+    color: #DB3201;
+}
+
+/* Main Content */
+
+main {
+    text-align: center;
+}
+
+/* Div Agenda */
+#input-box {
+    border: 3px solid #DB3201;
+    border-radius: 10px;
+    padding: 8px;
+}
