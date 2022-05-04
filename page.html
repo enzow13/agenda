@@ -8,22 +8,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbk5MaHI3U1lSQjBvSm5zMnN3RVQ1bi1faERzUXxBQ3Jtc0ttX0xpSE9sTDRLRHJVajBhcm5ra09xUHdubFZzdk9oa2ZaQldZM3pIRFFXZ0ZwRDNQR1pTc1V0ODBYV1ZERXI0N2VEZjRDdUVlaGdGbDdhZHBkMDRBa2hlNVBmekJ2M2J3WFg1b2ZsR2xMRHF0UXpGTQ&q=https%3A%2F%2Fcdnjs.cloudflare.com%2Fajax%2Flibs%2Ffont-awesome%2F4.7.0%2Fcss%2Ffont-awesome.min.css&v=4CUa9R_N4eQ">
     <title>Agenda Diária</title>
 </head>
 <body>
-    <main>
-        <div id="init-ctt-box">
-            <h1 id="title-">O que vai fazer hoje?</h1>
-            <p id="p-data">Dia de hoje: <span id="span-dia"></span></p>
+    <div class="conteudo">
+        <div class="topo">
+            <input type="text" id="NovaTarefa" placeholder="Adicione uma nova tarefa">
+            <button id="btnAddTarefa">
+                <i id="icone">ICON</i>
+            </button>
         </div>
-        <div id="btn-agenda">
-            <input type="text" id="input-box" placeholder="Digite aqui">
-            <button id="btn-confirm" type="button" onclick="ConfirmarAgenda()">Confirmar</button>
-        </div>
-        <div id="box-afazeres">
-            <h2>Afazeres:</h2>
-        </div>
-        </main>
+
+        <ul id="ListaTarefas">
+        </ul>
+    </div>
+
     <script src="./code.js"></script>
 </body>
 </html>

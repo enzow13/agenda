@@ -1,92 +1,81 @@
-*{
+body {
+    background-color: #000;
+    color: #FFF;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+.conteudo {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 450px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #2b2a2a;
+    padding: 55px;
+    border-radius: 12px;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.topo input {
+    width: 350px;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #191818;
+    outline: none;
+    font-size: 1.2rem;
+    background: #191818;
+    color: #FFF;
+}
+
+.topo button {
+    width: 45px;
+    border-radius: 12px;
+    border: 1px solid #191818;
+    background-color: #191818;
+    color: #fff;
+    outline: none;
+}
+
+.topo button:hover {
+    background: #1f1e1e;
+    cursor: pointer;
+}
+
+#ListaTarefas {
+    list-style-type: none;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
 }
 
-/* Initial Content Box */
-#init-ctt-box {
-    padding: 4rem;
+#ListaTarefas li {
+    padding: 20px;
+    background: #191818;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
 }
 
-/* Title */
-#title- {
-    font-size: 4rem;
-    font-weight: 400px;
-    color: #ff582a;
-    font-family: 'Poppins', sans-serif;
-    
-}
-
-/* Main Content */
-
-main {
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-}
-
-/* Div Agenda */
-#btn-agenda {
-    padding: 0px 15px 4rem 15px;
-}
-
-#input-box {
-    border: 2px solid #ff582a;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+.BtnAcao {
+    border-radius: 12px;
+    border: 1px solid #191818;
+    width: 50px;
+    height: 50px;
     outline: none;
-    padding: 5px 10px 5px 10px;
-    font-family: 'Poppins', sans-serif;
-}
-
-/* Button Confirmation */
-#btn-confirm {
-    padding: 5px 12px 5px 12px;
-    border: 2px solid #ff582a;
-    border-radius: 30px;
-    background-color: transparent;
-    transition: 0.4s;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-}
-
-#btn-confirm:hover {
+    background-color: #2b2a2a;
+    color: #FFF;
     cursor: pointer;
-    background-color: #ffeae4;
-    border-radius: 10px;
+    outline: none;
 }
 
-/* Afazeres text */
-#box-afazeres {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#box-afazeres h2 {
-    font-size: 3rem;
-    color: #37ffc3;
-    padding: 15px;
-}
-
-#box-afazeres div {
-    display: flex;
-    align-items: center;
-    margin-left: 4.2rem;
-
-}
-
-#box-afazeres p {
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 5px 0px 5px 0px;
-    margin-bottom: 2px;
-    width: 600px;
-    background-color: #37ffc3;
-}
-
-#box-afazeres span {
-    color: rgb(109, 109, 109);
-    margin-left: 12px;
+.BtnAcao:hover {
+    background-color: #3c3a3a;
 }

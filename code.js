@@ -1,43 +1,78 @@
-// Get time function to do list
-function getTime() {
-    let dia = date.getDate();
-    let horas = date.getHours();
-    let min = date.getMinutes();
-    let sec = date.getSeconds();
-    return `${dia} - ${horas}:${min}:${sec}`;
+let inputNovaTarefa = document.getElementById("NovaTarefa");
+let btnAddTarefa = document.getElementById("btnAddTarefa");
+let listaTarefas = document.querySelector("#ListaTarefas");
+
+inputNovaTarefa.addEventListener("keypress", (e) => {
+
+    if(e.key === 13) {
+        let tarefa = {
+            nome: inputNovaTarefa.value,
+            id: gerarId(),
+        }
+        adicionarTarefa(tarefa);
+        // Adicionar tarefa
+    }
+});
+
+btnAddTarefa.addEventListener("click", (e) => {
+
+    let tarefa = {
+        nome: inputNovaTarefa.value,
+        id: gerarId(),
+    }
+    adicionarTarefa(tarefa);
+})
+
+function gerarId() {
+    return Math.floor(Math.random() * 3000);
 }
 
-// Live Clock Span
-window.onload = displayClock();
-
-function displayClock(){
-    var data_hoje = new Date().toLocaleDateString();
-    var horas_hoje = new Date().toLocaleTimeString();
-    document.getElementById("span-dia").innerText = `${data_hoje} - ${horas_hoje}`;
-    setTimeout(displayClock, 1000); 
-  }
-
-
-// Create element for list
-function ConfirmarAgenda() {
-    let date = new Date();
-    let tempo_data = date.toLocaleTimeString();
-    let texto = document.getElementById("input-box");
-    const box_afazeres = document.getElementById("box-afazeres");
-
-    let div_box = document.createElement("div");
-    let p_msg_texto = document.createElement("p");
-    let p_msg_tempo = document.createElement("span");
-    let msg_texto = document.createTextNode(texto.value);
-    let msg_tempo = document.createTextNode(tempo_data);
-
-    p_msg_texto.appendChild(msg_texto);
-    p_msg_tempo.appendChild(msg_tempo);
-
-    div_box.appendChild(p_msg_texto);
-    div_box.appendChild(p_msg_tempo);
-
-    box_afazeres.appendChild(div_box);
-    box_afazeres.appendChild(div_elemento_text);
-    texto.value = " ";
+function adicionarTarefa(tarefa) {
+    
+    let li = criarTagLI(tarefa);
+    listaTarefas.appendChild(li);
+    inputNovaTarefa.value = '';
 }
+
+function criarTagLI(tarefa) {
+    
+    let li = document.createElement('li');
+    li.id = tarefa.id;
+
+    let span = document.createElement('span');
+    span.classList.add("textoTarefa")
+    span.innerHTML = tarefa.nome;
+
+    let div = document.createElement('div');
+
+    let btnEditar = document.createElement('button');
+    btnEditar.classList.add('BtnAcao');
+    btnEditar.innerHTML = '<i>EDIT</i>';
+    btnEditar.setAttribute('onclick', 'editar('+tarefa.id+')')
+
+    let btnExcluir = document.createElement('button');
+    btnExcluir.classList.add('BtnAcao');
+    btnExcluir.innerHTML = '<i>DEL</i>';
+    btnExcluir.setAttribute('onclick', 'excluir('+tarefa.id+')')
+
+    div.appendChild(btnEditar);
+    div.appendChild(btnExcluir);
+
+    li.appendChild(span);
+    li.appendChild(div);
+    return li
+}
+
+function editar(idTarefa) {
+    let li = document.getElementById(idTarefa);
+    if (li) {
+        
+    }
+};
+
+function excluir(idTarefa) {
+    let li = document.getElementById(idTarefa);
+    if (li) {
+        listaTarefas.removeChild(li);
+    }
+};
