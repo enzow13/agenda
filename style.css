@@ -95,8 +95,23 @@ header {
     color: #FFF;
     cursor: pointer;
     outline: none;
+    font-family: 'Poppins', sans-serif;
 }
 
 .BtnAcao:hover {
     background-color: #3c3a3a;
+}
+
+#btnAddTarefa {
+    font-family: 'Poppins', sans-serif;
+    color: #FFF;
+    outline: none;
+    border: none;
+}
+
+/* Warning p */
+#p-warning {
+    color: rgb(255, 10, 10);
+    font-family: 'Poppins', sans-serif;
+    display: none;
 }

@@ -29,9 +29,15 @@ function gerarId() {
 
 function adicionarTarefa(tarefa) {
     
-    let li = criarTagLI(tarefa);
-    listaTarefas.appendChild(li);
-    inputNovaTarefa.value = '';
+    if (inputNovaTarefa.value == '') {
+        tarefaSemText();
+        
+    } else {
+        let li = criarTagLI(tarefa);
+        listaTarefas.appendChild(li);
+        inputNovaTarefa.value = '';
+    }
+
 }
 
 function criarTagLI(tarefa) {
@@ -60,13 +66,17 @@ function criarTagLI(tarefa) {
 
     li.appendChild(span);
     li.appendChild(div);
+
     return li
 }
 
 function editar(idTarefa) {
     let li = document.getElementById(idTarefa);
     if (li) {
-        
+        lspan = li.getElementsByClassName('textoTarefa')[0];
+        console.log(lspan);
+        let change_text = prompt('O que quer editar?');  
+        lspan.innerText = change_text;
     }
 };
 
@@ -111,4 +121,13 @@ function tornarDarkMode() {
 
         check_darkmode = false;
     }
+}
+
+// Caso não tenha digitado nada na tarefa
+
+function tarefaSemText() {
+    let warning_text = document.getElementById('p-warning');
+
+    warning_text.style.display = 'block';
+    interval_warning = setInterval(() => {warning_text.style.display = 'none'}, 5000)
 }
