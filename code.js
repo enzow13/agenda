@@ -4,7 +4,7 @@ let listaTarefas = document.querySelector("#ListaTarefas");
 
 inputNovaTarefa.addEventListener("keypress", (e) => {
 
-    if(e.key === 13) {
+    if(e.key == 'Enter') {
         let tarefa = {
             nome: inputNovaTarefa.value,
             id: gerarId(),
@@ -76,3 +76,39 @@ function excluir(idTarefa) {
         listaTarefas.removeChild(li);
     }
 };
+
+// Dark Mode
+
+let icon_darkmode = document.getElementById("i-change-mode");
+
+icon_darkmode.setAttribute('onclick', 'tornarDarkMode()');
+
+var check_darkmode = false
+function tornarDarkMode() {
+    
+    if (!check_darkmode) {
+        // Background Color
+        document.body.style.backgroundColor = '#191818';
+
+        // Icon Moon
+        icon_darkmode.style.color = '#FFF';
+
+        // p and h1
+        document.getElementById('p-name').style.color = '#FFF';
+        document.getElementById('h1-title').style.color = '#FFF';
+
+        check_darkmode = true;
+    } else {
+        // Background Color
+        document.body.style.backgroundColor = '#FFF';
+
+        // Icon Moon
+        icon_darkmode.style.color = '#191818';
+
+        // p and h1
+        document.getElementById('p-name').style.color = '#191818';
+        document.getElementById('h1-title').style.color = '#191818';
+
+        check_darkmode = false;
+    }
+}
